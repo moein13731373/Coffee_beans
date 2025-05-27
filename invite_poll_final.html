@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>دعوت به کافه</title>
+  <style>
+    body { direction: rtl; font-family: Tahoma; margin: 30px; line-height: 2; }
+    #output { white-space: pre-line; margin-top: 20px; border-top: 1px solid #ccc; padding-top: 20px; }
+    input { margin: 5px 0; padding: 5px; width: 200px; }
+    button { padding: 5px 15px; }
+  </style>
+</head>
+<body>
+
+  <h2>👋 لطفاً اطلاعاتتو وارد کن</h2>
+  <label>اسمت چیه؟</label><br>
+  <input type="text" id="name" placeholder="مثلاً علی"><br>
+  <label>چند سالته؟</label><br>
+  <input type="number" id="age" placeholder="مثلاً ۲۴"><br><br>
+  <button onclick="generateText()">نمایش پیام</button>
+
+  <div id="output"></div>
+
+  <script>
+    function generateText() {
+      const name = document.getElementById("name").value;
+      const age = document.getElementById("age").value;
+
+      if (!name || !age) {
+        alert("لطفاً اسم و سنت رو وارد کن :)");
+        return;
+      }
+
+      const message = `
+سلام چطوری
+میدونم اسمت ${name} و حتی میدونم ${age} سالته
+ولی ${name} جان باور کن این ذره ای برام اهمیت نداره
+تنها چیزی که برام مهمه اینه که بیای کافه ما یه چیزی سفارش بدی
+فروشمون بیشتر شه آخر ماه چک داریم
+
+عشق منیا ولی اگه نیای
+خیلی خری
+ابلفضلی نامردی
+دلخور نشیاااا ولی ایشالله بری زیر تریلی
+اگه نیای
+
+قربونت برم بازم خودت میدونی من هیچ
+اجباری ندارم لینک پیچمونو برات
+گذاشتم خواستی بیا نخواستیم خاک تو
+سرت لیاقت نداری
+
+👇
+<a href="https://www.instagram.com/coffee_beanas?igsh=MXNpM3FkdWtoZ3Vqdw==" target="_blank">
+لینک پیج کافه ما | بزن کافه بینز فالو کن
+</a>`;
+
+      document.getElementById("output").innerHTML = message;
+    }
+  </script>
+
+</body>
+</html>
